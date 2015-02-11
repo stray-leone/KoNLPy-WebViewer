@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Flask Documentation:     http://flask.pocoo.org/docs/
 Jinja2 Documentation:    http://jinja.pocoo.org/2/documentation/
@@ -8,10 +9,12 @@ This file creates your application.
 
 import os
 from flask import Flask, render_template, request, redirect, url_for
+from konlpy.tag import Kkma
+
 
 app = Flask(__name__)
 
-app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'this_should_be_configured')
+#app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'this_should_be_configured')
 
 
 ###
@@ -20,6 +23,8 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'this_should_be_configur
 
 @app.route('/')
 def home():
+    kkma = Kkma()
+    return " ".join(kkma.sentences(u'질문이나 건의사항은 깃헙 이슈 트래커에 남겨주세요.'))
     """Render website's home page."""
     return render_template('home.html')
 
