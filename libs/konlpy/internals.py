@@ -22,18 +22,22 @@ def is_writable(path):
         statdata = os.stat(path)
         perm = stat.S_IMODE(statdata.st_mode)
         # is it world-writable?
-        if (perm & 0o002):
-            return True
-        # do we own it?
-        elif statdata.st_uid == os.getuid() and (perm & 0o200):
-            return True
-        # are we in a group that can write to it?
-        elif (statdata.st_gid in [os.getgid()] + os.getgroups()) \
-            and (perm & 0o020):
-            return True
-        # otherwise, we can't write to it.
-        else:
+        try:
+            if (perm & 0o002):
+                return True
+            # do we own it?
+            elif statdata.st_uid == os.getuid() and (perm & 0o200):
+                return True
+            # are we in a group that can write to it?
+
+            elif (statdata.st_gid in [os.getgid()] + os.getgroups()) and (perm & 0o020):
+                return True
+            # otherwise, we can't write to it.
+            else:
+                return False
+        except:
             return False
+
     # Otherwise, we'll assume it's writable.
     return True
 

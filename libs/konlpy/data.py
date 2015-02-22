@@ -26,8 +26,10 @@ path = []
 
 # User-specified locations
 path += [d for d in os.environ.get('KONLPY_DATA', '').split(os.pathsep) if d]
+'''
 if os.path.expanduser('~/') != '~/':
         path += [os.path.expanduser('~/konlpy_data')]
+'''
 
 # Windows common locations
 if sys.platform.startswith('win'):

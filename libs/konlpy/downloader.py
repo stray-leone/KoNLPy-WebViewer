@@ -41,9 +41,12 @@ def default_download_dir():
 
     # Otherwise, install in the user's home directory
     else:
-        homedir = os.path.expanduser('~/')
-        if homedir=='~/':
-            raise ValueError("Could not find a default download directory")
+        try:
+            homedir = os.path.expanduser('~/')
+            if homedir=='~/':
+                raise ValueError("Could not find a default download directory")
+        except:
+            homedir = os.path.join(os.path.dirname(__file__))
 
     return os.path.join(homedir, 'konlpy_data')
 

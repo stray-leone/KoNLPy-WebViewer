@@ -4,7 +4,8 @@
 import re
 try:
     import jpype
-except ImportError:
+except ImportError as E:
+    print E.args
     pass
 
 from .. import jvm
