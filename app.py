@@ -6,8 +6,13 @@ Werkzeug Documentation:  http://werkzeug.pocoo.org/documentation/
 
 This file creates your application.
 """
-
 import os
+import sys
+# third-party libraries.
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'lib'))
+sys.path.append(os.path.join(os.path.dirname(__file__)+"/", 'libs'))
+
+
 from flask import Flask, render_template, request, redirect, url_for
 from konlpy.tag import Kkma
 
