@@ -12,7 +12,7 @@ deploy to heroku
 
 deploy to google app engine
 -----------
-# can't use jpype in appengine, so can't deploy.
+#### can't use jpype in appengine, so can't deploy.
 ### Environment
     - windows 8.1 (64bit)
 ### install jpype 
