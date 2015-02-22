@@ -1,7 +1,8 @@
 KoNLPy-WebViewer
 =======
-
 KoNLPy Web based App
+
+deploy to heroku
 ---------
     - demo page on heroku (now memory exceed error) : http://konlpy-web.herokuapp.com/
         - on heroku, 1 dyno has 512MB memory limit. so exceed memory limit.
@@ -9,6 +10,9 @@ KoNLPy Web based App
     - temporary demo page : http://143.248.31.153:9191/
 
 
+deploy to google app engine
+-----------
+# can't use jpype in appengine, so can't deploy.
 ### Environment
     - windows 8.1 (64bit)
 ### install jpype 
