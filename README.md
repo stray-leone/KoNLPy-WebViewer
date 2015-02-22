@@ -1,4 +1,13 @@
 
+=======
+# KoNLPy-WebViewer
+KoNLPy Web based App
+- demo page on heroku (now memory exceed error) : http://konlpy-web.herokuapp.com/
+  - on heroku, 1 dyno has 512MB memory limit. so exceed memory limit.
+  - I will migrate to Google appengine.
+- temporary demo page : http://143.248.31.153:9191/
+
+
 == Environ ment ==
     - windows 8.1 (64bit)
 == install jpype ==
@@ -17,7 +26,6 @@ C:\Users\Ya\konlpyvirtualenv\Scripts>
 == Trouble Shootings ==
 - with python 2.7.9 at google app engine.
 - when running, meet the error below
-............................
   File "C:\Python27\Lib\urllib2.py", line 1240, in https_open
     context=self._context)
 TypeError: do_open() got an unexpected keyword argument 'context'
